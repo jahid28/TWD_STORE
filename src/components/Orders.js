@@ -45,7 +45,6 @@ export default function Orders() {
         })
         .catch(e => {
           toast.error("Somethig went wrong!");
-          console.log("error ", e);
         })
     }
 
@@ -53,7 +52,6 @@ export default function Orders() {
     catch (e) {
       toast.error("Somethig went wrong!");
 
-      console.log(e);
 
     }
     setProgress(100)
@@ -110,7 +108,6 @@ export default function Orders() {
     catch (e) {
       toast.error("Somethig went wrong!");
 
-      console.log(e);
 
     }
     setProgress(100)
@@ -151,7 +148,6 @@ export default function Orders() {
     catch (e) {
       toast.error("Somethig went wrong!");
 
-      console.log(e);
 
     }
     setProgress(100)

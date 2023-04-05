@@ -62,7 +62,6 @@ export default function SingleItemPage(props) {
     //                 })
     //                 .catch(e => {
     //                     toast.error("Somethig went wrong!");
-    //                     console.log("error ", e);
     //                 })
     //         }
     //     }
@@ -71,7 +70,6 @@ export default function SingleItemPage(props) {
     //     catch (e) {
     //         toast.error("Somethig went wrong!");
 
-    //         console.log(e);
 
     //     }
     //     setProgress(100)

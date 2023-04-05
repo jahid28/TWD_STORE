@@ -25,13 +25,11 @@ export default function MyAccount() {
 
                 })
                 .catch(e => {
-                    console.log("error ", e);
                 })
         }
 
 
         catch (e) {
-            console.log(e);
 
         }
 

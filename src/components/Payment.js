@@ -42,7 +42,6 @@ const PaymentForm = () => {
                 toast.error(result.error.message)
             }
             else {
-                // console.log("num is ",result.paymentMethod.card.last4)
                 if (counter.SmallCartPreviewTotal == 0) {
                     toast.error("Nothing to order")
                     setProgress(100)
@@ -89,13 +88,11 @@ const PaymentForm = () => {
                     })
                     .catch(e => {
                         toast.error("Somethig went wrong!");
-                        console.log("error ", e);
                     })
             }
         }
         catch (e) {
             toast.error("Something went wrong!")
-            console.log(e)
         }
         setProgress(100)
     };

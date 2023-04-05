@@ -41,13 +41,12 @@ export default function AllItemPage(props) {
                 })
                 .catch(e => {
                     toast.error("Somethig went wrong!");
-                    console.log("error ", e);
                 })
-        }
-
-
-        catch (e) {
-            console.log(e);
+            }
+            
+            
+            catch (e) {
+            toast.error("Somethig went wrong!");
 
         }
 
@@ -80,14 +79,13 @@ export default function AllItemPage(props) {
                 })
                 .catch(e => {
                     toast.error("Somethig went wrong!");
-                    console.log("error ", e);
                 })
-        }
+            }
 
 
         catch (e) {
-            console.log(e);
-
+            
+            toast.error("Somethig went wrong!");
         }
 
 

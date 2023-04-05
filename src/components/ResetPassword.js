@@ -43,14 +43,13 @@ export default function ResetPassword() {
           })
           .catch(e => {
             toast.error("Somethig went wrong!");
-            console.log("error ", e);
           })
-      }
+        }
     }
 
-
+    
     catch (e) {
-      console.log(e);
+      toast.error("Somethig went wrong!");
 
     }
 

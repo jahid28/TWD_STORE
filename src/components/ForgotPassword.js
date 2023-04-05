@@ -59,13 +59,13 @@ export default function ForgotPassword() {
           .catch(e => {
             toast.error("Something went wrong")
           })
-        setProgress(70)
+          setProgress(70)
+        }
       }
-    }
 
-
-    catch (e) {
-      console.log(e);
+      
+      catch (e) {
+      toast.error("Something went wrong")
 
     }
     setProgress(100)

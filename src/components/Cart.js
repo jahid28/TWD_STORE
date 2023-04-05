@@ -46,7 +46,6 @@ export default function Cart() {
         })
         .catch(e => {
           toast.error("Somethig went wrong!");
-          console.log("error ", e);
         })
       // }
     }
@@ -55,7 +54,6 @@ export default function Cart() {
     catch (e) {
       toast.error("Somethig went wrong!");
 
-      console.log(e);
 
     }
     setProgress(100)
@@ -79,7 +77,6 @@ export default function Cart() {
         })
         .catch(e => {
           toast.error("Somethig went wrong!");
-          console.log("error ", e);
         })
 
     }
@@ -87,7 +84,6 @@ export default function Cart() {
 
     catch (e) {
       toast.error("Somethig went wrong!");
-      console.log(e);
 
     }
     setProgress(100)
@@ -112,12 +108,10 @@ export default function Cart() {
         })
         .catch(e => {
           toast.error("Somethig went wrong!");
-          console.log("error ", e);
         })
     }
     catch (e) {
       toast.error("Somethig went wrong!");
-      console.log(e);
 
     }
     setProgress(100)

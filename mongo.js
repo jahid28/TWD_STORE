@@ -1,12 +1,12 @@
 const mongoose=require("mongoose")
 
 mongoose.connect("mongodb://0.0.0.0:27017/mern_ecommerce")
-    .then(() => {
-        console.log("react mongodb connected");
-    })
-    .catch(() => {
-        console.log('failed');
-    })
+    // .then(() => {
+    //     console.log("react mongodb connected");
+    // })
+    // .catch(() => {
+    //     console.log('failed');
+    // })
 
 const userSchema = new mongoose.Schema({
     name: {

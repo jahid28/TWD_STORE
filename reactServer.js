@@ -6,11 +6,11 @@
 // import { userCollection, productCollection, cartCollection, orderCollection } from "./mongo.js"
 // import dotenv from 'dotenv/config';
 // import path from 'path'
-const cors=require("cors")
-const bcryptjs=require("bcryptjs")
-const express=require("express")
-const nodemailer=require("nodemailer")
-const {userCollection, productCollection, cartCollection, orderCollection}=require("./mongo")
+const cors = require("cors")
+const bcryptjs = require("bcryptjs")
+const express = require("express")
+const nodemailer = require("nodemailer")
+const { userCollection, productCollection, cartCollection, orderCollection } = require("./mongo")
 
 const PORT = process.env.PORT || 8000
 // const BASE_URL=process.env.BASE_URL
@@ -53,7 +53,6 @@ app.get("/", cors(), (req, res) => {
 //         cb(null, '/images')
 //     },
 //     filename: (req, file, cb) => {
-//         console.log("pic isssssss",file);
 //         // ff = file
 //         cb(null, file.originalname)
 //     } 
@@ -85,7 +84,6 @@ app.post("/pageChange", async (req, res) => {
     }
     catch (e) {
         res.json("fail")
-        console.log(e)
     }
 })
 
@@ -125,7 +123,6 @@ app.post("/getProducts", async (req, res) => {
     }
     catch (e) {
         res.json("fail")
-        console.log(e)
     }
 })
 
@@ -138,7 +135,6 @@ app.post("/myaccount", async (req, res) => {
 
     }
     catch (e) {
-        console.log(e)
 
     }
 
@@ -188,7 +184,6 @@ app.post("/search", async (req, res) => {
     }
     catch (e) {
         res.json("fail")
-        console.log(e)
     }
 })
 
@@ -196,8 +191,7 @@ app.post("/search", async (req, res) => {
 
 //     const searchVal = req.body.query
 //     const words = searchVal.split(' ');
-//     // console.log(words)
-//     // console.log(words)
+//     
 //     let finalArr = []
 //     let totalItems = 0
 
@@ -206,7 +200,6 @@ app.post("/search", async (req, res) => {
 
 //         const query = req.body.query
 //         const pageNum = req.body.pageNum
-//         // console.log("type is ",type ," and page is ",pageNum)
 //         for (let j = 0; j < products.length; j++) {
 //             let sum = 0
 //             for (let i = 0; i < words.length; i++) {
@@ -233,13 +226,11 @@ app.post("/search", async (req, res) => {
 
 //                     finalArr.push(products[j])
 //                 }
-//                 // console.log("search is \n ", e)
 //                 totalItems++
 //             }
 
 //             // })
 //         }
-//         // console.log(finalArr)
 //         let obj = {
 //             finalArr,
 //             totalItems
@@ -278,7 +269,6 @@ app.post("/adminUpdate", async (req, res) => {
     }
     catch (e) {
         res.json("fail")
-        console.log(e)
     }
 })
 
@@ -390,7 +380,6 @@ app.post("/getItemsFromcart", async (req, res) => {
     }
     catch (e) {
         res.json("fail")
-        console.log(e)
     }
 
 })
@@ -412,14 +401,12 @@ app.post("/deleteItemFromCart", async (req, res) => {
 
         let newArr = []
         arr.map(async (e) => {
-            // console.log(e.nameOfProduct)
             const checkInProducts = await productCollection.findOne({ name: e.nameOfProduct })
             let SingleItemPageObj = checkInProducts
             let qty = e.qty
             // subTotal=subTotal+ qty*(checkInProducts.price)
 
             newArr.push({ SingleItemPageObj, qty })
-            // console.log(checkInProducts)
 
 
         })
@@ -431,7 +418,6 @@ app.post("/deleteItemFromCart", async (req, res) => {
 
     }
     catch (e) {
-        console.log("ufff", e)
         res.json("fail")
     }
 
@@ -456,14 +442,12 @@ app.post("/qtyChanged", async (req, res) => {
         let arr = []
 
         check.allProducts.map(async (e) => {
-            // console.log(e.nameOfProduct)
             const checkInProducts = await productCollection.findOne({ name: e.nameOfProduct })
             let SingleItemPageObj = checkInProducts
             let qty = e.qty
             // subTotal=subTotal+ qty*(checkInProducts.price)
 
             arr.push({ SingleItemPageObj, qty })
-            // console.log(checkInProducts)
 
 
         })
@@ -562,7 +546,6 @@ app.post("/addToOrders", async (req, res) => {
         }
     }
     catch (e) {
-        console.log("ufff", e)
         res.json("fail")
     }
 
@@ -629,9 +612,8 @@ app.post("/getItemsFromOrderCollection", async (req, res) => {
         const cookieVal = req.body.cookieVal
 
         const check = await orderCollection.find({ email: cookieVal })
-        // console.log(check)
 
-        if (check.length!=0) {
+        if (check.length != 0) {
 
             let arr = []
 
@@ -648,13 +630,12 @@ app.post("/getItemsFromOrderCollection", async (req, res) => {
 
 
                 // arr.push({ SingleItemPageObj, date, time })
-                arr.push({ SingleItemPageObj, qty, date, time,phoneNum,address,pincode,cardNum })
+                arr.push({ SingleItemPageObj, qty, date, time, phoneNum, address, pincode, cardNum })
 
 
             })
 
             setTimeout(() => {
-                // console.log('why')
                 res.json(arr)
             }, 200)
 
@@ -662,14 +643,12 @@ app.post("/getItemsFromOrderCollection", async (req, res) => {
 
         }
         else {
-            // console.log('nope')
             res.json("noitems")
         }
 
     }
     catch (e) {
         res.json("fail")
-        console.log("oommgg ", e)
     }
 
 })
@@ -737,12 +716,10 @@ app.post("/resetPassword", async (req, res) => {
 
 app.post("/login", async (req, res) => {
     const formData = req.body.formData
-    // console.log("login form is ", formData)
     try {
 
         const check = await userCollection.findOne({ email: formData.email })
 
-        // console.log(check,"and",passCheck)
 
         if (check) {
             const passCheck = await compare(formData.password, check.password)
@@ -755,7 +732,6 @@ app.post("/login", async (req, res) => {
 
     }
     catch (e) {
-        console.log("ufff", e)
         res.json("fail")
     }
 
@@ -792,6 +768,8 @@ app.post("/signup", async (req, res) => {
 
 
 
-app.listen(PORT, () => {
-    console.log('Server listening on port');
-});
+// app.listen(PORT, () => {
+//     console.log('Server listening on port');
+// });
+
+app.listen(PORT);

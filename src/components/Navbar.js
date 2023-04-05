@@ -40,7 +40,6 @@ export default function Navbar() {
         })
           .then(res => {
             // let finalArr = res.data
-            console.log("hi ", res.data)
             searchQuery(res.data)
             setProgress(70)
             navigate("/searchpage")
@@ -48,7 +47,6 @@ export default function Navbar() {
           .catch(e => {
             toast.error("Something went wrong!");
 
-            console.log(e);
           })
       }
 
@@ -56,7 +54,6 @@ export default function Navbar() {
     }
     catch (e) {
       toast.error("Something went wrong!");
-      console.log(e);
 
     }
 
@@ -100,7 +97,6 @@ export default function Navbar() {
     setMicState(true)
     recognition.start(); // start the recognition process
     setTimeout(() => {
-      // console.log(query)
       recognition.stop(); // stop the recognition process after 3 seconds
 
       setMicState(false)
@@ -124,7 +120,6 @@ export default function Navbar() {
         .catch(e => {
           toast.error("Something went wrong!");
 
-          console.log(e);
         })
       setProgress(100)
 
@@ -141,14 +136,12 @@ export default function Navbar() {
     // };
 
     // const handleError = (err) => {
-    //   console.error(err);
     // };
     // function handleError(){
 
     // }
 
     // const clicked=()=>{
-    //   console.log('lll')
     // }
   }
 
@@ -161,7 +154,6 @@ export default function Navbar() {
   // };
 
   // const handleError = (err) => {
-  //   console.error(err);
   // };
 
   return (

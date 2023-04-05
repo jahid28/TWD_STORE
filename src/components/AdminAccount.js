@@ -49,13 +49,12 @@ export default function AdminAccount() {
           })
           .catch(e => {
             toast.error("Something went wrong carch!");
-
-            console.log(e);
+            
           })
-
-      }
-      catch (e) {
-        console.log(e);
+          
+        }
+        catch (e) {
+        toast.error("Something went wrong carch!");
 
       }
       setFormData({ name: '', price: '', stocks: '', type: '' }); // clear form fields
