@@ -16,7 +16,7 @@ export default function MyAccount() {
 
         try {
 
-            await axios.post("http://localhost:8000/myaccount", {
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/myaccount`, {
                 cookieValue
             })
                 .then(res => {

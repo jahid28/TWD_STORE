@@ -35,7 +35,7 @@ export default function Navbar() {
 
 
 
-        await axios.post("http://localhost:8000/search", {
+        await axios.post(`${process.env.REACT_APP_SERVER_URL}/search`, {
           query
         })
           .then(res => {
@@ -111,7 +111,7 @@ export default function Navbar() {
       let query = event.results[0][0].transcript;
 
       setQuery(query)
-      await axios.post("http://localhost:8000/search", {
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/search`, {
         query
       })
         .then(res => {

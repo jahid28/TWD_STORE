@@ -35,6 +35,7 @@ import { QrReader } from 'react-qr-reader';
 // import { useDispatch, useSelector } from 'react-redux'
 
 function App() {
+  console.log(process.env.REACT_APP_SERVER_URL ,' and ',process.env.REACT_APP_RECAPTCHA)
   // const counter = useSelector(state => state.counter)
   // console.log('counter is ',counter.number)
   const [cookieValue, setCookieValue] = useState(Cookies.get('email'));
@@ -64,7 +65,6 @@ function App() {
     <div className="App ">
       <ToastContainer />
 {/* <ReactMagnify/> */}
-
 {/* <p className="bg"></p> */}
 
       <Router>

@@ -25,7 +25,7 @@ export default function ResetPassword() {
       }
       else {
         const cookieVal = Cookies.get("resetEmail")
-        await axios.post("http://localhost:8000/resetPassword", {
+        await axios.post(`${process.env.REACT_APP_SERVER_URL}/resetPassword`, {
           cookieVal, password
         })
           .then(res => {

@@ -54,7 +54,7 @@ export default function SingleItemPage(props) {
                 setProgress(70)
             }
             else {
-                await axios.post("http://localhost:8000/addToCart", {
+                await axios.post(`${process.env.REACT_APP_SERVER_URL}/addToCart`, {
                     cookieVal, nameOfProduct, qty
                 })
                     .then(res => {

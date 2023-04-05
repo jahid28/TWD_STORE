@@ -26,7 +26,7 @@ export default function Orders() {
     try {
       setProgress(50)
 
-      await axios.post("http://localhost:8000/getItemsFromOrderCollection", {
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/getItemsFromOrderCollection`, {
         cookieVal
       })
         .then(res => {
@@ -84,7 +84,7 @@ export default function Orders() {
     try {
       setProgress(50)
 
-      await axios.post("http://localhost:8000/submitReview", {
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/submitReview`, {
         cookieVal, review, productName
       })
         .then(res => {
@@ -124,7 +124,7 @@ export default function Orders() {
     try {
       setProgress(50)
 
-      await axios.post("http://localhost:8000/submitRating", {
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/submitRating`, {
         cookieVal, selectedOption, productName
       })
         .then(res => {

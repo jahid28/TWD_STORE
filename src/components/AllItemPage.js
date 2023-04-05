@@ -27,7 +27,7 @@ export default function AllItemPage(props) {
 
         try {
 
-            await axios.post("http://localhost:8000/getProducts", {
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/getProducts`, {
                 selectedOption
             })
                 .then(res => {
@@ -69,7 +69,7 @@ export default function AllItemPage(props) {
 
         try {
 
-            await axios.post("http://localhost:8000/pageChange", {
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/pageChange`, {
                 selectedOption, pageNum
             })
                 .then(res => {

@@ -67,7 +67,7 @@ export default function Signup() {
       }
       else {
 
-        await axios.post("http://localhost:8000/signup", {
+        await axios.post(`${process.env.REACT_APP_SERVER_URL}/signup`, {
           formData
         })
           .then(res => {

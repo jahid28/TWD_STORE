@@ -69,7 +69,7 @@ const PaymentForm = () => {
                 setProgress(70)
 
 
-                await axios.post("http://localhost:8000/addToOrders", {
+                await axios.post(`${process.env.REACT_APP_SERVER_URL}/addToOrders`, {
                     cookieVal, arr, isProductFromCart
                 })
                     .then(res => {

@@ -35,7 +35,7 @@ export default function AdminAccount() {
 
 
       try {
-        await axios.post("http://localhost:8000/adminUpdate", {
+        await axios.post(`${process.env.REACT_APP_SERVER_URL}/adminUpdate`, {
           formData, messages
 
         })
