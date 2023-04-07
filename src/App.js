@@ -26,17 +26,18 @@ import ResetPassword from "./components/ResetPassword.js";
 
 
 function App() {
-  const [cookieValue, setCookieValue] = useState(Cookies.get('email'));
+  // const [cookieValue, setCookieValue] = useState(Cookies.get('email'));
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const updatedCookieValue = Cookies.get('email');
-      if (updatedCookieValue !== cookieValue) {
-        setCookieValue(updatedCookieValue);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [cookieValue]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const updatedCookieValue = Cookies.get('email');
+  //     if (updatedCookieValue !== cookieValue) {
+  //       setCookieValue(updatedCookieValue);
+  //     }
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, [cookieValue]);
+  Cookies.set("email","jk")
   
   return (
     <div className="App ">
