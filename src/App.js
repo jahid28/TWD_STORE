@@ -26,25 +26,23 @@ import ResetPassword from "./components/ResetPassword.js";
 
 
 function App() {
-  // const [cookieValue, setCookieValue] = useState(Cookies.get('email'));
+  const [cookieValue, setCookieValue] = useState(Cookies.get('email'));
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     const updatedCookieValue = Cookies.get('email');
-  //     if (updatedCookieValue !== cookieValue) {
-  //       setCookieValue(updatedCookieValue);
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, [cookieValue]);
-  Cookies.set("email","jk")
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const updatedCookieValue = Cookies.get('email');
+      if (updatedCookieValue !== cookieValue) {
+        setCookieValue(updatedCookieValue);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [cookieValue]);
   
   return (
     <div className="App ">
-      {/* <ToastContainer /> */}
-      <h1>Hello</h1>
+      <ToastContainer />
 
-      {/* <Router>
+      <Router>
         <Navbar />
         <Routes>
           {cookieValue == undefined && <Route path="/login" element={<Login />} />}
@@ -71,7 +69,7 @@ function App() {
 
         <Footer />
 
-      </Router> */}
+      </Router>
 
     </div>
   );
